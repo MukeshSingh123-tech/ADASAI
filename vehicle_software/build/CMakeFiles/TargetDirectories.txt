@@ -1,0 +1,3 @@
+/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/build/CMakeFiles/adas_vehicle.dir
+/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/build/CMakeFiles/rebuild_cache.dir

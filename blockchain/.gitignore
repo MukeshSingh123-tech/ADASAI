@@ -1,0 +1,26 @@
+# ---- Node / Hardhat ---
+blockchain/node_modules/
+blockchain/artifacts/
+blockchain/cache/
+blockchain/types/
+blockchain/dist/
+node_modules/
+
+# ---- Besu data (Docker volumes, but just in case) ---
+besu-network/node*/data/
+
+# ---- Python ---
+python/__pycache__/
+python/*.pyc
+python/.env
+
+# ---- Java JDK (should never be here) ---
+**/oracleJdk*/
+
+# ---- OS ---
+.DS_Store
+Thumbs.db
+
+# ---- IDE ---
+.vscode/
+.idea/

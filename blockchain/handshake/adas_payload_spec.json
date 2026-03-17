@@ -1,0 +1,56 @@
+{
+    "description": "ADAS Decision Service → Blockchain Module handshake payload specification",
+    "version": "2.0.0",
+    "agreed_date": "2026-03-10",
+    "payload_schema": {
+        "timestamp": {
+            "type": "integer",
+            "description": "Unix epoch timestamp (seconds) when the ADAS event was generated",
+            "example": 1741628400
+        },
+        "event_type": {
+            "type": "string",
+            "description": "The lane departure event classification issued by the ADAS Decision Service",
+            "enum": [
+                "LANE_DEPARTURE_LEFT",
+                "LANE_DEPARTURE_RIGHT",
+                "LANE_DEPARTURE_CRITICAL"
+            ],
+            "example": "LANE_DEPARTURE"
+        },
+        "vehicle_id": {
+            "type": "string",
+            "description": "Unique vehicle identifier (registration / chassis code)",
+            "example": "ELC23027"
+        },
+        "driver": {
+            "type": "string",
+            "description": "Full name of the driver at the time of the event",
+            "example": "Mukesh Singh"
+        },
+        "confidence": {
+            "type": "number",
+            "description": "AI model confidence score for the lane departure detection [0.0–100.0]",
+            "example": 98.5
+        }
+    },
+    "example_payloads": [
+        "{\"timestamp\":1741628400,\"event_type\":\"LANE_DEPARTURE_LEFT\",\"vehicle_id\":\"ELC23027\",\"driver\":\"Mukesh Singh\",\"confidence\":98.5}",
+        "{\"timestamp\":1741628405,\"event_type\":\"LANE_DEPARTURE_RIGHT\",\"vehicle_id\":\"ELC23027\",\"driver\":\"Mukesh Singh\",\"confidence\":97.2}",
+        "{\"timestamp\":1741628410,\"event_type\":\"LANE_DEPARTURE_CRITICAL\",\"vehicle_id\":\"ELC23027\",\"driver\":\"Mukesh Singh\",\"confidence\":99.1}"
+    ],
+    "wire_format": {
+        "zmq_topics": [
+            "ADAS_EVENT <compact_json>|<sha256_hex>",
+            "ADAS_HASH <sha256_hex>"
+        ],
+        "endpoint": "tcp://127.0.0.1:5555",
+        "protocol": "ZeroMQ PUB/SUB"
+    },
+    "notes": [
+        "Payload MUST be a compact single-line JSON string (no whitespace between keys/values) for deterministic SHA-256 hashing.",
+        "The C++ DecisionService serialises the payload, hashes it with CryptoModule (OpenSSL SHA-256), and publishes both the JSON and the hash over ZMQ.",
+        "The Python Web3Bridge subscribes to both topics: ADAS_EVENT for local logging, ADAS_HASH for blockchain submission.",
+        "The Auditor.py script re-hashes each line in vehicle_log.txt and calls ForensicLogger.verifyHash(bytes32) for O(1) on-chain verification."
+    ]
+}

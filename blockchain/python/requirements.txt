@@ -1,0 +1,6 @@
+# Python dependencies for the ADAS Blockchain Bridge
+# Install with:  pip install -r requirements.txt
+
+pyzmq>=25.0.0        # ZeroMQ Python bindings
+web3>=6.0.0           # Ethereum interaction (web3.py v6+)
+eth-account>=0.10.0   # Transaction signing

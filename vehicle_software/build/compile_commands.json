@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/build",
+  "command": "/usr/bin/c++  -I/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/include -isystem /usr/include/opencv4 -std=gnu++17 -o CMakeFiles/adas_vehicle.dir/src/main.cpp.o -c /mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/src/main.cpp",
+  "file": "/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/src/main.cpp"
+},
+{
+  "directory": "/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/build",
+  "command": "/usr/bin/c++  -I/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/include -isystem /usr/include/opencv4 -std=gnu++17 -o CMakeFiles/adas_vehicle.dir/src/ExecutionManager.cpp.o -c /mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/src/ExecutionManager.cpp",
+  "file": "/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/src/ExecutionManager.cpp"
+},
+{
+  "directory": "/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/build",
+  "command": "/usr/bin/c++  -I/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/include -isystem /usr/include/opencv4 -std=gnu++17 -o CMakeFiles/adas_vehicle.dir/src/PerceptionService.cpp.o -c /mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/src/PerceptionService.cpp",
+  "file": "/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/src/PerceptionService.cpp"
+},
+{
+  "directory": "/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/build",
+  "command": "/usr/bin/c++  -I/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/include -isystem /usr/include/opencv4 -std=gnu++17 -o CMakeFiles/adas_vehicle.dir/src/DecisionService.cpp.o -c /mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/src/DecisionService.cpp",
+  "file": "/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/src/DecisionService.cpp"
+},
+{
+  "directory": "/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/build",
+  "command": "/usr/bin/c++  -I/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/include -isystem /usr/include/opencv4 -std=gnu++17 -o CMakeFiles/adas_vehicle.dir/src/CryptoModule.cpp.o -c /mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/src/CryptoModule.cpp",
+  "file": "/mnt/c/Users/mukes/OneDrive/Desktop/AiLanDetection/vehicle_software/src/CryptoModule.cpp"
+}
+]

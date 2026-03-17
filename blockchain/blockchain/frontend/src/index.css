@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(15, 22, 41, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(6, 182, 212, 0.3);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(6, 182, 212, 0.5);
+}
+
+/* ── Background Gradient ──────────────────────────────── */
+body {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0f1629 25%, #151d35 50%, #1a1040 75%, #0a0e1a 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* ── Glass Card ───────────────────────────────────────── */
+@layer components {
+    .glass-card {
+        @apply relative rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl transition-all duration-300;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .glass-card:hover {
+        @apply border-brand-500/20;
+        box-shadow: 0 8px 40px rgba(6, 182, 212, 0.08);
+    }
+
+    .stat-card {
+        @apply glass-card p-4 text-center;
+    }
+
+    .btn-primary {
+        @apply px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-white shadow-lg shadow-brand-500/20 transition-all duration-200 active:scale-[0.97] disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100;
+    }
+
+    .btn-secondary {
+        @apply px-4 py-2 rounded-xl font-medium text-sm bg-white/[0.06] border border-white/[0.08] hover:bg-white/[0.10] hover:border-brand-500/30 text-gray-300 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed;
+    }
+
+    .input-field {
+        @apply w-full px-4 py-3 rounded-xl text-sm bg-white/[0.04] border border-white/[0.08] text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:border-brand-500/30 font-mono transition-all duration-200;
+    }
+
+    .section-title {
+        @apply flex items-center gap-3 text-lg font-semibold text-gray-100 mb-4;
+    }
+
+    .status-success {
+        @apply text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-lg px-3 py-2 text-sm mt-3;
+    }
+
+    .status-error {
+        @apply text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg px-3 py-2 text-sm mt-3;
+    }
+
+    .status-warning {
+        @apply text-amber-400 bg-amber-400/10 border border-amber-400/20 rounded-lg px-3 py-2 text-sm mt-3;
+    }
+
+    .status-info {
+        @apply text-brand-400 bg-brand-400/10 border border-brand-400/20 rounded-lg px-3 py-2 text-sm mt-3;
+    }
+}
+
+/* ── Live Event Dot Animation ─────────────────────────── */
+.live-dot {
+    @apply inline-block w-2 h-2 rounded-full bg-emerald-400;
+    animation: livePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+    }
+
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 6px rgba(52, 211, 153, 0);
+    }
+}
+
+/* ── Shimmer Loading ──────────────────────────────────── */
+.shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ── Spinner ──────────────────────────────────────────── */
+.spinner {
+    @apply inline-block w-4 h-4 border-2 border-white/30 border-t-brand-400 rounded-full;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,18 @@
+# Python dependencies for ADAS Blockchain Forensics API
+# Install with:  pip install -r requirements.txt
+
+# ── FastAPI Backend ─────────────────────────────────
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-multipart>=0.0.12
+
+# ── AI Model ─────────────────────────────────────
+torch>=2.0.0
+torchvision>=0.15.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# ── Blockchain ───────────────────────────────────────
+web3>=6.0.0
+eth-account>=0.10.0
+pyzmq>=25.0.0

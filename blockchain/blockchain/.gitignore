@@ -1,0 +1,18 @@
+# Node modules
+/node_modules
+
+# Compilation output
+/dist
+/bundle
+
+# Hardhat Build Artifacts
+/artifacts
+/cache
+/types
+/coverage
+
+# Deployments (auto-generated, contains addresses)
+/deployments
+
+# Java JDK (should never be here)
+oracleJdk*/
